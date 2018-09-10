@@ -1,0 +1,9 @@
+mkdir -p data
+for num in {1000..9500..500} ;do
+ for i in {1..20} ;do 
+     > "data/$num-$i.dat"     
+  for ((n=0; n < $num; n++)) ;do 
+     python -c "import random; print random.randint(100,10000)" >> "data/$num-$i.dat"; 
+   done
+  done
+done
